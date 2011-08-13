@@ -1,0 +1,24 @@
+diff -up xdg-utils/scripts/xdg-email.in.wrong-gconftool xdg-utils/scripts/xdg-email.in
+--- xdg-utils/scripts/xdg-email.in.wrong-gconftool	2010-06-14 08:42:37.537791403 -0400
++++ xdg-utils/scripts/xdg-email.in	2010-06-14 08:42:48.862765282 -0400
+@@ -120,7 +120,7 @@ open_kde()
+ open_gnome()
+ {
+     local client
+-    client=`gconftool --get /desktop/gnome/url-handlers/mailto/command | cut -d ' ' -f 1`
++    client=`gconftool-2 --get /desktop/gnome/url-handlers/mailto/command | cut -d ' ' -f 1`
+     echo $client | grep thunderbird > /dev/null 2>&1
+     if [ $? -eq 0 ] ; then
+         run_thunderbird "$client" "$1"
+diff -up xdg-utils/scripts/xdg-email.wrong-gconftool xdg-utils/scripts/xdg-email
+--- xdg-utils/scripts/xdg-email.wrong-gconftool	2010-06-14 08:42:07.258016502 -0400
++++ xdg-utils/scripts/xdg-email	2010-06-14 08:42:16.157796012 -0400
+@@ -469,7 +469,7 @@ open_kde()
+ open_gnome()
+ {
+     local client
+-    client=`gconftool --get /desktop/gnome/url-handlers/mailto/command | cut -d ' ' -f 1`
++    client=`gconftool-2 --get /desktop/gnome/url-handlers/mailto/command | cut -d ' ' -f 1`
+     echo $client | grep thunderbird > /dev/null 2>&1
+     if [ $? -eq 0 ] ; then
+         run_thunderbird "$client" "$1"

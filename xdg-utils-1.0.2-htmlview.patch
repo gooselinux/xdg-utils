@@ -1,0 +1,12 @@
+diff -up xdg-utils/scripts/xdg-open.in.htmlview xdg-utils/scripts/xdg-open.in
+--- xdg-utils/scripts/xdg-open.in.htmlview	2008-01-24 14:24:51.000000000 -0600
++++ xdg-utils/scripts/xdg-open.in	2008-11-21 14:00:34.000000000 -0600
+@@ -130,7 +130,7 @@ detectDE
+ if [ x"$DE" = x"" ]; then
+     # if BROWSER variable is not set, check some well known browsers instead
+     if [ x"$BROWSER" = x"" ]; then
+-        BROWSER=firefox:mozilla:netscape
++        BROWSER=htmlview:firefox:mozilla:netscape:links:lynx
+     fi
+     DE=generic
+ fi
